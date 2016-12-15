@@ -8,7 +8,6 @@ var send = document.getElementById("send");
 var guessedCorrect = false;
 setUp();
 
-console.log(chosenWord);
 function setUp() {
   pickWord();
   chooseCorrectLetters();
@@ -24,10 +23,10 @@ send.addEventListener("click", function () {
     alert("wrong")
   }
 });
+
 function pickWord () {
   var wordsLength = words.length-1
   var randomPos = Math.floor(Math.random() * wordsLength) + 0;
-  console.log(randomPos);
   chosenWord = words[randomPos];
 }
 
@@ -41,10 +40,4 @@ function chooseCorrectLetters () {
      }
    }
  }
-}
-
-
-function checkCorrect() {
-  var input = prompt("the scrambled word is: " + correctWord.join("") + " what do you think it is");
-
 }
