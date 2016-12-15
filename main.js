@@ -2,16 +2,28 @@ var words = ["hello", "red", "orange", "black", "daily"];
 var chosenWord;
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var correctWord = [];
-
+var displayWord = document.getElementById("scrambled-word");
+var input = document.getElementById("input");
+var send = document.getElementById("send");
+var guessedCorrect = false;
 setUp();
 
 console.log(chosenWord);
 function setUp() {
   pickWord();
   chooseCorrectLetters();
-  sevenLetter();
-  checkCorrect();
 }
+send.addEventListener("click", function () {
+  if (input.value === chosenWord) {
+    alert("you guessed correct ");
+    input.value = "";
+    displayWord.innerHTML = "";
+    correctWord = [];
+    setUp();
+  } else {
+    alert("wrong")
+  }
+});
 function pickWord () {
   var wordsLength = words.length-1
   var randomPos = Math.floor(Math.random() * wordsLength) + 0;
@@ -25,27 +37,14 @@ function chooseCorrectLetters () {
    for (var j = 0; j < splitWord.length; j++) {
      if (letters[i] === splitWord[j]) {
        correctWord.push(letters[i]);
-       console.log(correctWord);
+       displayWord.innerHTML = correctWord.join("");
      }
    }
  }
 }
 
 
-function sevenLetter () {
-  var wordsLength = words.length-1
-  while (correctWord.length < 7) {
-    var randomNum = Math.floor(Math.random() * wordsLength);
-    correctWord.push(letters[randomNum]);
-    console.log(correctWord);
-  }
-}
-
 function checkCorrect() {
   var input = prompt("the scrambled word is: " + correctWord.join("") + " what do you think it is");
-  if (input === chosenWord) {
-    alert("you guessed correct ");
-  } else {
-    alert("wrong")
-  }
+
 }
