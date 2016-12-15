@@ -11,7 +11,9 @@ setUp();
 function setUp() {
   pickWord();
   chooseCorrectLetters();
+  
 }
+
 send.addEventListener("click", function () {
   if (input.value === chosenWord) {
     alert("you guessed correct ");
