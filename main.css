@@ -1,0 +1,11 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  background: linear-gradient(#00759C, #74D7F7);
+  font-family: 'Barrio', cursive;
+  margin: 0px;
+  text-align: center;
+}

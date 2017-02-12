@@ -24,6 +24,12 @@ send.addEventListener("click", function () {
   }
 });
 
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    send.click();
+  }
+})
+
 function pickWord () {
   var wordsLength = words.length-1
   var randomPos = Math.floor(Math.random() * wordsLength) + 0;
