@@ -11,7 +11,7 @@ setUp();
 function setUp() {
   pickWord();
   chooseCorrectLetters();
-  
+
 }
 
 send.addEventListener("click", function () {
@@ -25,6 +25,12 @@ send.addEventListener("click", function () {
     alert("wrong")
   }
 });
+
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    send.click();
+  }
+})
 
 function pickWord () {
   var wordsLength = words.length-1
