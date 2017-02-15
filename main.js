@@ -5,6 +5,7 @@ var displayWord = document.getElementById("scrambled-word");
 var input = document.getElementById("input");
 var send = document.getElementById("send");
 setUp();
+
 function setUp() {
   loadXMLDoc();
 }
