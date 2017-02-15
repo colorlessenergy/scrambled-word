@@ -3,9 +3,51 @@ html, body {
   padding: 0;
 }
 
+.data {
+  align-items: center;
+  background-color: #BED194;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Chewy', cursive;
+  font-size: 28px;
+  height: 200px;
+  justify-content: center;
+}
+
+.data p {
+  margin: 20px 0;
+}
+
+.quote {
+  align-items: center;
+  background-color: #6D874D;
+  color: #A2F900;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Press Start 2P', cursive;
+  height: 300px;
+  justify-content: center;
+}
+
+.quote p:first-child {
+  margin-top: 0;
+}
+
 .title {
-  background: linear-gradient(#00759C, #74D7F7);
+  background: linear-gradient(#88F218, #BFFC19);
   font-family: 'Barrio', cursive;
   margin: 0px;
   text-align: center;
+}
+
+
+#scrambled-word {
+  align-items: center;
+  background-color: #192F1C;
+  color: #1BD632;
+  display: flex;
+  font-size: 28px;
+  height: 200px;
+  justify-content: center;
+  margin: 0;
 }

@@ -4,7 +4,6 @@ var correctWord = [];
 var displayWord = document.getElementById("scrambled-word");
 var input = document.getElementById("input");
 var send = document.getElementById("send");
-var guessedCorrect = false;
 
 setUp();
 
@@ -15,7 +14,7 @@ send.addEventListener("click", function () {
   if (input.value === chosenWord) {
     alert("you guessed correct ");
     input.value = "";
-    displayWord.innerHTML = "";
+    displayWord.innerHTML = "scrambled word: ";
     correctWord = [];
     setUp();
   } else {
@@ -37,7 +36,7 @@ function chooseCorrectLetters (word) {
    for (var j = 0; j < splitWord.length; j++) {
      if (letters[i] === splitWord[j]) {
        correctWord.push(letters[i]);
-       displayWord.innerHTML = correctWord.join("");
+       displayWord.innerHTML = "scrambled word: " + correctWord.join("");
        console.log(correctWord);
      }
    }
