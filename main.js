@@ -4,6 +4,8 @@ var correctWord = [];
 var displayWord = document.getElementById("scrambled-word");
 var input = document.getElementById("input");
 var send = document.getElementById("send");
+var showWord = document.getElementById("show-word");
+var newWord = document.getElementById("new-word");
 setUp();
 
 function setUp() {
@@ -26,7 +28,18 @@ input.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
     send.click();
   }
-})
+});
+
+showWord.addEventListener("click", function () {
+  displayWord.innerHTML = "word: " + chosenWord;
+});
+
+newWord.addEventListener("click", function () {
+  input.value = "";
+  displayWord.innerHTML = "scrambled word: ";
+  correctWord = [];
+  setUp();
+});
 
 
 function chooseCorrectLetters (word) {
