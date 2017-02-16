@@ -20,7 +20,7 @@ send.addEventListener("click", function () {
     correctWord = [];
     setUp();
   } else {
-    alert("wrong")
+    alert("wrong!")
   }
 });
 
